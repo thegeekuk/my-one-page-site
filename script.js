@@ -13,10 +13,25 @@ const IMAGES = [
   "images/012.jpg",
   "images/013.jpg",
   "images/014.jpg",
-  "images/015.jpg"
+  "images/015.jpg",
+  "images/016.jpg",
+  "images/017.jpg",
+  "images/018.jpg",
+  "images/019.jpg",
+  "images/020.jpg",
+  "images/021.jpg",
+  "images/022.jpg",
+  "images/023.jpg",
+  "images/024.jpg",
+  "images/025.jpg",
+  "images/026.jpg",
+  "images/027.jpg",
+  "images/028.jpg",
+  "images/029.jpg",
+  "images/030.jpg"
 ];
 
-const MAX = 12;
+const MAX = 25;
 
 function render() {
   const grid = document.getElementById("grid");

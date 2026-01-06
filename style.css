@@ -85,7 +85,7 @@ a:hover{
 
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fill, minmax(160px, 1fr));
+  grid-template-columns:repeat(auto-fill, minmax(180px, 1fr));
   gap:10px;
 }
 
@@ -119,15 +119,23 @@ a:hover{
   margin-top:26px;
 }
 
-.contact p{
+.contactLines{
   margin:0;
-  font-size:14px;
-  color:var(--muted);
 }
 
-.dot{
-  margin:0 8px;
+.contactItem{
+  display:block;
+  font-size:14px;
   color:var(--muted);
+  line-height:1.5;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.contactItem:hover{
+  color:var(--text);
+  opacity:1;
 }
 
 /* Footer */
