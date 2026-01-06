@@ -1,6 +1,6 @@
-const COUNT = 60;        // total images in /images
-const MAX = 25;          // tiles shown on the page
-const EXT = "jpg";       // change to "jpeg" if your files are .jpeg
+const TOTAL_IMAGES = 60;   // how many images exist in /images
+const MAX = 25;            // how many tiles to show
+const EXT = "jpg";         // file extension
 
 function render() {
   const grid = document.getElementById("grid");
@@ -9,25 +9,24 @@ function render() {
   grid.textContent = "";
 
   // Build list: images/001.jpg ... images/060.jpg
-  const a = [];
-  for (let i = 1; i <= COUNT; i++) {
-    a.push(`images/${String(i).padStart(3, "0")}.${EXT}`);
+  const images = [];
+  for (let i = 1; i <= TOTAL_IMAGES; i++) {
+    images.push(`images/${String(i).padStart(3, "0")}.${EXT}`);
   }
 
   // Shuffle
-  for (let i = a.length - 1; i > 0; i--) {
+  for (let i = images.length - 1; i > 0; i--) {
     const j = (Math.random() * (i + 1)) | 0;
-    [a[i], a[j]] = [a[j], a[i]];
+    [images[i], images[j]] = [images[j], images[i]];
   }
 
   // Render up to MAX
-  const n = Math.min(MAX, a.length);
-  for (let i = 0; i < n; i++) {
+  for (let i = 0; i < Math.min(MAX, images.length); i++) {
     const tile = document.createElement("div");
     tile.className = "tile";
 
     const img = document.createElement("img");
-    img.src = a[i];
+    img.src = images[i];
     img.alt = "";
     img.loading = "lazy";
     img.decoding = "async";
@@ -43,4 +42,5 @@ if (year) year.textContent = new Date().getFullYear();
 const btn = document.getElementById("refreshBtn");
 if (btn) btn.addEventListener("click", render);
 
+// Shuffle on load
 render();
