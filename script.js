@@ -1,37 +1,6 @@
-const IMAGES = [
-  "images/001.jpg",
-  "images/002.jpg",
-  "images/003.jpg",
-  "images/004.jpg",
-  "images/005.jpg",
-  "images/006.jpg",
-  "images/007.jpg",
-  "images/008.jpg",
-  "images/009.jpg",
-  "images/010.jpg",
-  "images/011.jpg",
-  "images/012.jpg",
-  "images/013.jpg",
-  "images/014.jpg",
-  "images/015.jpg",
-  "images/016.jpg",
-  "images/017.jpg",
-  "images/018.jpg",
-  "images/019.jpg",
-  "images/020.jpg",
-  "images/021.jpg",
-  "images/022.jpg",
-  "images/023.jpg",
-  "images/024.jpg",
-  "images/025.jpg",
-  "images/026.jpg",
-  "images/027.jpg",
-  "images/028.jpg",
-  "images/029.jpg",
-  "images/030.jpg"
-];
-
-const MAX = 25;
+const COUNT = 60;        // total images in /images
+const MAX = 25;          // tiles shown on the page
+const EXT = "jpg";       // change to "jpeg" if your files are .jpeg
 
 function render() {
   const grid = document.getElementById("grid");
@@ -39,13 +8,21 @@ function render() {
 
   grid.textContent = "";
 
-  const a = IMAGES.slice();
+  // Build list: images/001.jpg ... images/060.jpg
+  const a = [];
+  for (let i = 1; i <= COUNT; i++) {
+    a.push(`images/${String(i).padStart(3, "0")}.${EXT}`);
+  }
+
+  // Shuffle
   for (let i = a.length - 1; i > 0; i--) {
     const j = (Math.random() * (i + 1)) | 0;
     [a[i], a[j]] = [a[j], a[i]];
   }
 
-  for (let i = 0; i < Math.min(MAX, a.length); i++) {
+  // Render up to MAX
+  const n = Math.min(MAX, a.length);
+  for (let i = 0; i < n; i++) {
     const tile = document.createElement("div");
     tile.className = "tile";
 
