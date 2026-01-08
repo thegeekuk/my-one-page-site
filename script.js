@@ -7,7 +7,7 @@ const LOOP_DIR = "images/loops";
 const LOOP_EXT = "mp4";
 
 // Stills (JPG)
-const STILL_COUNT = 65;            // images/stills/001.jpg -> 065.jpg
+const STILL_COUNT = 178;            // images/stills/001.jpg -> 065.jpg
 const STILL_DIR = "images/stills";
 const STILL_EXT = "jpg";
 
