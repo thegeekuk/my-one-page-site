@@ -2,7 +2,7 @@ const TOTAL_TILES = 25;
 
 // Motion loops (MP4)
 const LOOP_MAX = 8;
-const LOOP_COUNT = 650;            // images/loops/001.mp4 -> 650.mp4
+const LOOP_COUNT = 683;            // images/loops/001.mp4 -> 650.mp4
 const LOOP_DIR = "images/loops";
 const LOOP_EXT = "mp4";
 
